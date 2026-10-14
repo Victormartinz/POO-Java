@@ -7,16 +7,22 @@ public class Casa {
         PlantaCasa casa = new PlantaCasa();
 
         //inicializando atributos(variaveis) características da casa
-        casa.mentragem = 70;
+        casa.metragem = 70;
         casa.material = "Tijolo";
         casa.numeroQuartos = 3;
         casa.numeroBanheiros = 4;
-        casa.cor = "Preto com beje";
+        casa.corCasa = "Preto com beje";
 
         //chamando a função (métodos) da ordem;
         casa.construir();
 
         casa.pintar();
 
+        int resultado = casa.somarMetragem();
+        System.out.println("Resultado da Soma de Metragem: " + resultado);
+
+        casa.pintarQuarto("Preto");
+
+        casa.adicionarItens("Cama e Sofá", "Geladeira, Fogão e Ventilador", "Prato, Copos e Talheres", 2350.89);
     }
 }
