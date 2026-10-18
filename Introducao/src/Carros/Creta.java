@@ -1,18 +1,18 @@
 package Carros;
 
-public class Creta implements Carros{
+public class Creta implements Carro {
     @Override
-    public void acelerar() {
+    public void Acelerar() {
+        System.out.println("Creta Acelera a 60km por hora");
+    }
+
+    @Override
+    public void Freiar() {
 
     }
 
     @Override
-    public void freiar() {
-
-    }
-
-    @Override
-    public void parar() {
+    public void Parar() {
 
     }
 }
