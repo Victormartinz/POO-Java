@@ -2,7 +2,7 @@ package SistemaContaBancaria;
 
 public interface Conta {
 
-    void depositar();
+    void depositar(Double valor);
 
 
     void sacar(Double valor);

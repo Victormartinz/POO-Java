@@ -7,16 +7,21 @@ public class ContaBancaria implements Conta{
     Scanner scanner = new Scanner(System.in);
 
     String titular;
-    Double saldo;
+    double saldo;
 
     public void entradaDadosTitular(){
-        System.out.println("Pedindo Dados do Titular");
-        System.out.println("-------------------------");
+            System.out.println("Pedindo Dados do Titular");
+            System.out.println("-------------------------");
 
-        System.out.println("Digite o nome do titular: ");
-        titular = scanner.nextLine();
-        System.out.println("Digite o Saldo Inicial: ");
-        saldo = scanner.nextDouble();
+            System.out.println("Digite o nome do titular: ");
+            titular = scanner.nextLine();
+
+            if (saldo < 0 ){
+                System.out.println("error: Saldo Negativo!");
+            }else{
+                System.out.println("Digite o Saldo Inicial: ");
+                saldo = scanner.nextDouble();
+            }
     }
 
     public void mostrarDadosTitular(){
@@ -27,18 +32,16 @@ public class ContaBancaria implements Conta{
     }
 
     @Override
-    public void depositar(){
-        Double valor = 0.0;
-        if (valor <= 0 ){
+    public void depositar(Double valor){
+        if (valor > 0 ){
             System.out.println("");
-            System.out.println("Erro: Depósito Inválido!");
-        }else{
-            System.out.println("");
-            System.out.println("Digite o Valor do Deposito: ");
-            valor = scanner.nextDouble();
             saldo += valor;
             System.out.println("Depósito Realizado com Sucesso!");
             System.out.println("Saldo Atual: " + saldo);
+
+        }else{
+            System.out.println("");
+            System.out.println("Erro: Depósito Inválido!");
         }
     }
 
@@ -60,6 +63,4 @@ public class ContaBancaria implements Conta{
         System.out.println("");
         System.out.println("Saldo da Conta: " + saldo);
     }
-
-
 }
