@@ -27,13 +27,16 @@ public class ContaBancaria implements Conta{
     }
 
     @Override
-    public void depositar(Double valor) {
+    public void depositar(){
+        Double valor = 0.0;
         if (valor <= 0 ){
             System.out.println("");
             System.out.println("Erro: Depósito Inválido!");
         }else{
-            saldo += valor;
             System.out.println("");
+            System.out.println("Digite o Valor do Deposito: ");
+            valor = scanner.nextDouble();
+            saldo += valor;
             System.out.println("Depósito Realizado com Sucesso!");
             System.out.println("Saldo Atual: " + saldo);
         }

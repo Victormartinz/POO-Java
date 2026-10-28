@@ -9,6 +9,7 @@ public class Main {
 
         primeiraConta.entradaDadosTitular();
         primeiraConta.mostrarDadosTitular();
+        primeiraConta.depositar();
 
 
 
