@@ -1,4 +1,4 @@
-package SistemaContaBancária;
+package SistemaContaBancaria;
 
 public interface Conta {
 

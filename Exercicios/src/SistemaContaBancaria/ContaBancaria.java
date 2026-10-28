@@ -1,9 +1,23 @@
-package SistemaContaBancária;
+package SistemaContaBancaria;
+
+import java.util.Scanner;
 
 public class ContaBancaria implements Conta{
 
+    Scanner scanner = new Scanner(System.in);
+
     String titular;
     Double saldo;
+
+    public void entradaDadosTitular(){
+        System.out.println("Pedindo Dados do Titular");
+        System.out.println("-------------------------");
+
+        System.out.println("Digite o nome do titular: ");
+        titular = scanner.nextLine();
+        System.out.println("Digite o Saldo Inicial: ");
+        saldo = scanner.nextDouble();
+    }
 
     public void mostrarDadosTitular(){
         System.out.println("====Conta criada com sucesso!====");
@@ -43,4 +57,6 @@ public class ContaBancaria implements Conta{
         System.out.println("");
         System.out.println("Saldo da Conta: " + saldo);
     }
+
+
 }
