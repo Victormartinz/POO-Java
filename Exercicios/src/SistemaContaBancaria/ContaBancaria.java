@@ -10,18 +10,25 @@ public class ContaBancaria implements Conta{
     double saldo;
 
     public void entradaDadosTitular(){
-            System.out.println("Pedindo Dados do Titular");
-            System.out.println("-------------------------");
+        double valor = saldo;
 
-            System.out.println("Digite o nome do titular: ");
-            titular = scanner.nextLine();
+        System.out.println("Pedindo Dados do Titular");
+        System.out.println("-------------------------");
 
-            if (saldo < 0 ){
-                System.out.println("error: Saldo Negativo!");
-            }else{
-                System.out.println("Digite o Saldo Inicial: ");
-                saldo = scanner.nextDouble();
-            }
+        System.out.println("Digite o nome do titular: ");
+        titular = scanner.nextLine();
+
+        System.out.println("Digite o Saldo Inicial: ");
+        valor = scanner.nextDouble();
+
+        while (valor < 0) {
+            System.out.println("error: Saldo Negativo!");
+            System.out.println("Digite um valor válido (positivo): ");
+            valor = scanner.nextDouble();
+        }
+
+        System.out.println("Saldo Aceito com Sucesso!");
+        saldo = valor;
     }
 
     public void mostrarDadosTitular(){
