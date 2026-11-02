@@ -6,12 +6,16 @@ public class Produto {
     private double precoProduto;
     private int quantidadeProduto;
 
-    public String getNomeProduto(){
+    public String getNomeProduto() {
         return nomeProduto;
     }
 
-    public void setNomeProduto(String nomeProduto){
-        this.nomeProduto = nomeProduto;
+    public void setNomeProduto(String nomeProduto) {
+        if(nomeProduto != null && !nomeProduto.trim().isEmpty()){
+            this.nomeProduto = nomeProduto;
+        }else {
+            System.out.println("erro: Nome do Produto inválido!");
+        }
     }
 
     public double getPrecoProduto() {
@@ -19,29 +23,37 @@ public class Produto {
     }
 
     public void setPrecoProduto(double precoProduto) {
-        if (precoProduto > 0){
+        if (precoProduto > 0) {
             this.precoProduto = precoProduto;
-        }else {
+        } else {
             System.out.println("Error: Cadastre um Preço válido!");
         }
 
     }
 
     public int getQuantidadeProduto() {
-        if (quantidadeProduto >= 0){
-            return quantidadeProduto;
-        }else {
-            System.out.println("Error: Cadastre um Preço válido!");
-            return 0;
-        }
-
+        return quantidadeProduto;
     }
 
     public void setQuantidadeProduto(int quantidadeProduto) {
-        if (quantidadeProduto >= 0){
+        if (quantidadeProduto >= 0) {
             this.quantidadeProduto = quantidadeProduto;
-        }else {
-            System.out.println("Error: Cadastre um Preço válido!");
+        } else {
+            System.out.println("Error: Cadastre uma quantidade válida!");
         }
+    }
+
+    public Produto(String nomeProduto, double precoProduto, int quantidadeProduto){
+        setNomeProduto(nomeProduto);
+        setPrecoProduto(precoProduto);
+        setQuantidadeProduto(quantidadeProduto);
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("Dados do produto");
+
+        System.out.println(getNomeProduto());
+        System.out.println(getPrecoProduto());
+        System.out.println(getQuantidadeProduto());
     }
 }
